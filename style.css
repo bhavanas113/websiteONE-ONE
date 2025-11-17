@@ -21,6 +21,10 @@ html {
     --whatsapp-color: #25D366;
     --instagram-color: #C13584; /* Representative of the gradient */
     --email-color: #D93025; /* Standard red for Gmail/Mail */
+    
+    /* NEW: RGBA for Modal Background */
+    --modal-bg-color: rgba(255, 255, 255, 0.9); /* Lighter background for glass effect */
+    --modal-input-bg: rgba(255, 255, 255, 0.1); /* Very light, semi-transparent input */
 }
 
 *,::after,::before{
@@ -34,6 +38,8 @@ body{
     background-color: var(--secondary-color);
     font-family: 'Poppins', sans-serif;
     color: var(--text-color);
+    /* NEW: Prevent horizontal scroll if global padding is inconsistent */
+    overflow-x: hidden; 
 }
 
 
@@ -575,6 +581,7 @@ body{
     color: var(--light-text-color);
     padding: 80px 5%;
     text-align: center;
+    /* FIX: Match section margin to body padding for wide screens */
     margin: 0 -5%; 
     border-radius: 10px 10px 0 0;
 }
@@ -654,6 +661,7 @@ footer {
     font-size: 0.9rem;
     color: var(--dark-grey);
     background-color: var(--light-grey); 
+    /* FIX: Match section margin to body padding for wide screens */
     margin: 0 -5%; 
 }
 
@@ -674,8 +682,8 @@ footer {
 }
 
 /* =======================================
-   RESPONSIVENESS (Media Queries)
-   ======================================= */
+    RESPONSIVENESS (Media Queries)
+    ======================================= */
 
 /* Tablet View (Max 1024px) */
 @media (max-width: 1024px) {
@@ -699,10 +707,15 @@ footer {
 
     /* Services Section */
     .category .list .card-list {
+        /* Use auto-fit for flexible tablet grid, 2 or 3 columns */
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
 
     /* Projects Section */
+    .projects-section, .about-us-section, .contact-us, footer {
+        /* Adjusted margins to maintain visual alignment with body padding */
+        margin: 0 -5%;
+    }
     .project-card, 
     .project-card:nth-child(even) {
         flex-direction: column;
@@ -712,10 +725,10 @@ footer {
         width: 100%;
     }
     .project-image {
-        max-height: 300px;
+        max-height: 350px; /* Slightly taller for tablet view */
     }
     .project-info {
-        padding: 30px;
+        padding: 40px; /* Consistent padding */
     }
 
     /* About Us Section */
@@ -730,20 +743,34 @@ footer {
 
 /* Mobile View (Max 768px) */
 @media (max-width: 768px) {
+    /* **CRITICAL FIX**: Change body padding to prevent content crowding */
     body {
-        padding: 0 3%;
+        padding: 0 3%; 
     }
     .navbar-container {
         padding: 10px 0; 
     }
     
+    /* FIX: Match ALL full-width sections to the new mobile body padding */
+    .projects-section, .about-us-section, .contact-us, footer {
+        margin: 0 -3%;
+        /* Also adjust padding on contact-us for consistency */
+    }
+    .contact-us {
+        padding: 50px 3%;
+    }
+
+
     /* NAVIGATION HIDING/SHOWING */
     .desktop-nav, .auth-buttons {
         display: none; 
     }
     .menu-toggle-btn {
         display: block;
+        font-size: 2.2rem; /* Larger, easier to tap */
         color: var(--primary-color);
+        cursor: pointer;
+        padding: 5px;
     }
     
     .mobile-nav {
@@ -754,14 +781,15 @@ footer {
     .mobile-nav ul {
         display: flex;
         flex-direction: column;
-        padding: 15px 0;
+        padding: 5px 0; /* Reduced vertical padding */
         list-style: none;
     }
     .mobile-nav ul li a {
         display: block;
-        padding: 10px 3%;
+        padding: 8px 3%; /* Reduced padding on links */
         text-align: center;
-        border-bottom: 1px solid rgba(0, 51, 102, 0.1); 
+        border-bottom: 1px solid var(--light-grey); /* Lighter separator */
+        font-weight: 600;
     }
     .mobile-nav ul li:last-child a {
         border-bottom: none;
@@ -775,8 +803,12 @@ footer {
 
     /* Hero Section */
     .content .content-left .info h1 {
-        font-size: 2.5rem;
+        font-size: 2rem; /* Smaller font on small phones */
     }
+    .content .content-left .info p {
+        font-size: 1rem;
+    }
+    /* Hiding the image on the smallest screens to prioritize content and load speed */
     .content .content-right {
         display: none; 
     }
@@ -790,17 +822,27 @@ footer {
         margin-bottom: 40px;
     }
     .category .list .card-list {
+        /* Single column for easy scrolling */
         grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+    .category .card-list .card {
+        padding: 20px;
     }
     
-
     /* Contact Section */
-    .contact-us {
-        padding: 50px 3%;
+    .contact-us h2 {
+        font-size: 1.8rem;
     }
     .contact-details {
         flex-direction: column;
-        gap: 20px;
+        gap: 15px;
+    }
+    .detail-item {
+        font-size: 1rem;
+    }
+    .social-icons a {
+        font-size: 1.5rem; /* Smaller social icons */
     }
 }
 
@@ -816,36 +858,37 @@ footer {
     width: 100%; 
     height: 100%;
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+    background-color: rgba(0, 0, 0, 0.6); /* Black w/ a bit more opacity for better focus */
     backdrop-filter: blur(5px);
 }
 
 /* Modal Content/Box */
 .modal-content {
-    background-color: var(18, 28, 53, 0.8); /* #121C35 */
+    /* FIX: Use RGBA value for reliable transparency */
+    background-color: rgba(255, 255, 255, 0.95); 
     margin: 10% auto; /* 10% from the top and centered */
     padding: 30px 40px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 51, 102, 0.1);
     width: 90%; 
     max-width: 450px;
     border-radius: 15px;
     position: relative;
 
     /* Elegant Border using Primary Accent */
-    border: 1px solid rgba(51, 102, 255, 0.3); /* Transparent primary color border */
+    border: 1px solid rgba(0, 51, 102, 0.3); 
 
     /* Glassmorphism Effect - Blur the content behind the modal */
     backdrop-filter: blur(10px); 
     -webkit-backdrop-filter: blur(10px); /* For Safari support */
 
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5),
-                0 0 20px rgba (51, 102, 255, 0.2);
-    transition: all 0.5s ease-in-out;            
+                0 0 20px rgba(0, 51, 102, 0.2);
+    transition: all 0.5s ease-in-out;           
 }
 
 .modal-content h3 {
-    color: var(--primary-color); /* #3366FF */
-    font-size: 2.2rem;
+    color: var(--primary-color); 
+    font-size: 2rem; /* Slightly reduced size */
     margin-bottom: 25px;
     text-align: center;
     font-weight: 700;
@@ -854,7 +897,7 @@ footer {
 /* Close Button */
 .close-btn {
     color: var(--dark-grey); 
-    font-size: 36px;
+    font-size: 30px; /* Reduced size */
     position: absolute;
     top: 5px;
     right: 15px;
@@ -865,7 +908,7 @@ footer {
 .close-btn:hover,
 .close-btn:focus {
     color: var(--primary-color);
-   
+    
 }
 
 /* Form Styling */
@@ -874,7 +917,7 @@ footer {
     margin-top: 15px;
     margin-bottom: 5px;
     font-weight: 500;
-    color: var(--dark-grey);
+    color: var(--text-color); /* Readable dark text */
     font-size: 0.9rem;
 }
 
@@ -883,19 +926,19 @@ footer {
     padding: 14px 12px;
     margin-bottom: 15px;
 
-   /* Input fields should also be semi-transparent and borderless */
-    background-color: rgba(18, 28, 53, 0.6); 
-    border: 1px solid rgba(255, 255, 255, 0.1); 
+    /* Use a light background for better contrast in a light modal, but slightly transparent */
+    background-color: var(--light-grey); 
+    border: 1px solid var(--dark-grey); 
     border-radius: 8px;
     box-sizing: border-box;
-    color: var(--light-text-color);
+    color: var(--text-color);
     transition: border-color 0.3s;
 }
 
 .modal-content form input:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 8px rgba(51, 102, 255, 0.5);
+    box-shadow: 0 0 8px rgba(0, 51, 102, 0.3);
 }
 
 .submit-btn {
@@ -910,11 +953,11 @@ footer {
     font-weight: 700;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
+    width: 100%; /* Full width submit button */
 }
 
 .submit-btn:hover {
-    background-color: var(--primary-color); 
-    filter: brightness(1.2);
+    background-color: var(--accent-color); /* Hover color for consistency */
     transform: translateY(-2px); /* Subtle lift effect */
 }
 
@@ -929,7 +972,7 @@ footer {
 }
 
 .forgot-password:hover, .terms a:hover {
-    color: var(--dark-grey);
+    color: var(--accent-color);
 }
 
 .terms {
