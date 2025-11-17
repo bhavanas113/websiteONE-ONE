@@ -793,19 +793,6 @@ footer {
         grid-template-columns: 1fr; 
     }
     
-    /* Projects Section (Mobile adjustments) */
-    .projects-section {
-        padding: 60px 0;
-    }
-    .projects-section h2 {
-        font-size: 1.8rem;
-    }
-    .project-image {
-        max-height: 200px;
-    }
-    .project-info {
-        padding: 25px;
-    }
 
     /* Contact Section */
     .contact-us {
