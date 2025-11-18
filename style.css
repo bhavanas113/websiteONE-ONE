@@ -33,6 +33,20 @@ html {
     box-sizing: border-box;
 }
 
+/* --- Navigation Bar --- */
+/* Add fixed positioning to the entire header section */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* Match the body's padding (5% on each side) to keep content aligned */
+    width: 90%; 
+    z-index: 100; /* Ensure the header is always on top of other content */
+    background-color: var(--secondary-color); /* Add a solid background color */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: add a subtle shadow */
+    transition: width 0.3s; /* Transition for responsiveness */
+}
+
 body{
     padding: 0 5%;
     background-color: var(--secondary-color);
@@ -756,6 +770,13 @@ footer {
     body {
         padding: 0 3%;
     }
+    
+    .header {
+        /* Match the mobile body padding (3% on each side) */
+        width: 94%; 
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); 
+    }
+    
     .navbar-container {
         padding: 10px 0;
     }
