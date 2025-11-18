@@ -356,97 +356,6 @@ body{
     text-decoration: underline;
 }
 
-/* --- CAREER SECTION (UPDATED FROM PROJECTS) --- */
-.career-section {
-    padding: 80px 0;
-    text-align: center;
-    background-color: var(--light-grey);
-    margin: 0 -5%;
-}
-
-.career-section .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.career-section h2 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: var(--primary-color);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.section-intro {
-    font-size: 1.1rem;
-    margin-bottom: 50px;
-    color: var(--dark-grey);
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.job-posting-grid {
-    display: grid;
-    /* Responsive grid: 2 or 3 columns depending on space, minimum 300px wide */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.job-card {
-    background-color: var(--secondary-color);
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 51, 102, 0.1);
-    text-align: left;
-    transition: transform 0.3s, box-shadow 0.3s;
-    height: 100%;
-}
-
-.job-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 51, 102, 0.2);
-    border-top: 4px solid var(--accent-color);
-}
-
-.job-card h3 {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    margin-bottom: 10px;
-}
-
-.job-card .location-type {
-    font-size: 0.95rem;
-    color: var(--dark-grey);
-    margin-bottom: 15px;
-    display: block;
-}
-
-.job-card p {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 25px;
-}
-
-.apply-link {
-    display: inline-block;
-    padding: 10px 25px;
-    background-color: var(--accent-color);
-    color: var(--light-text-color);
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: background-color 0.3s;
-}
-
-.apply-link:hover {
-    background-color: #1e7d3a;
-}
-/* --- END CAREER SECTION --- */
-
-
 /* --- ABOUT US SECTION --- */
 
 .about-us-section {
@@ -549,6 +458,86 @@ body{
     margin-top: 15px;
     color: var(--dark-grey);
 }
+
+/* --- CAREER SECTION (NO OPENINGS) --- */
+.career-section {
+    padding: 80px 0;
+    text-align: center;
+    background-color: var(--light-grey);
+    margin: 0 -5%;
+}
+
+.career-section .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.career-section h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-intro {
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+    color: var(--dark-grey);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* STYLES for No Openings Block */
+.no-openings {
+    display: flex;
+    justify-content: center;
+}
+
+.no-openings-content {
+    background-color: var(--secondary-color);
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 51, 102, 0.15);
+    max-width: 600px;
+    text-align: center;
+}
+
+.no-openings-content h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.no-openings-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.tech-stack-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 30px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.tech-stack-list li {
+    background-color: var(--light-grey);
+    color: var(--text-color);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: 1px solid var(--dark-grey);
+}
+/* --- END CAREER SECTION --- */
 
 
 /* --- CONTACT US SECTION --- */
@@ -688,12 +677,11 @@ footer {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
 
-    /* Career Section (Updated) */
+    /* Full-width sections */
     .career-section, .about-us-section, .contact-us, footer {
         /* Adjusted margins to maintain visual alignment with body padding */
         margin: 0 -5%;
     }
-    /* Note: job-posting-grid uses auto-fit, so no explicit column change needed here */
 
     /* About Us Section */
     .about-content-wrapper {
@@ -793,6 +781,18 @@ footer {
         padding: 20px;
     }
     
+    /* Career Section Mobile Adjustment */
+    .no-openings-content {
+        padding: 30px 20px;
+    }
+    .tech-stack-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .tech-stack-list li {
+        width: 100%;
+    }
+
     /* Contact Section */
     .contact-us h2 {
         font-size: 1.8rem;
