@@ -1,39 +1,58 @@
-// Get the modals
-const signInModal = document.getElementById('signInModal');
-const signUpModal = document.getElementById('signUpModal');
+/**
+ * Modal control functions for Sign In and Sign Up pop-ups.
+ */
 
-// Get the buttons that open the modals
-const signInBtn = document.querySelector('.signin-link');
-const signUpBtn = document.querySelector('.signup-link');
-
-// Get the <span> elements that close the modals
-const closeBtns = document.querySelectorAll('.close-btn');
-
-// When the user clicks on the Sign In button, open the modal 
-signInBtn.onclick = function(e) {
-    e.preventDefault(); // Prevents link navigation
-    signInModal.style.display = 'block';
+function openSignInModal() {
+    document.getElementById('signInModal').style.display = 'block';
 }
 
-// When the user clicks on the Sign Up button, open the modal 
-signUpBtn.onclick = function(e) {
-    e.preventDefault(); // Prevents link navigation
-    signUpModal.style.display = 'block';
+function closeSignInModal() {
+    document.getElementById('signInModal').style.display = 'none';
 }
 
-// When the user clicks on <span> (x), close the current modal
-closeBtns.forEach(btn => {
-    btn.onclick = function() {
-        this.closest('.modal').style.display = 'none';
-    }
-});
+function openSignUpModal() {
+    document.getElementById('signUpModal').style.display = 'block';
+}
 
-// When the user clicks anywhere outside of the modal, close it
+function closeSignUpModal() {
+    document.getElementById('signUpModal').style.display = 'none';
+}
+
+// Close the modal if the user clicks anywhere outside of it
 window.onclick = function(event) {
+    const signInModal = document.getElementById('signInModal');
+    const signUpModal = document.getElementById('signUpModal');
+    
+    // If the click target is the modal background, close the modal
     if (event.target == signInModal) {
-        signInModal.style.display = 'none';
+        signInModal.style.display = "none";
     }
     if (event.target == signUpModal) {
-        signUpModal.style.display = 'none';
+        signUpModal.style.display = "none";
     }
 }
+
+/**
+ * Mobile Navigation Toggle (Hamburger Menu)
+ */
+
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggleBtn = document.querySelector('.menu-toggle-btn');
+    const mobileNav = document.querySelector('.mobile-nav');
+
+    menuToggleBtn.addEventListener('click', () => {
+        // Toggle the visibility of the mobile navigation menu
+        if (mobileNav.style.display === 'block') {
+            mobileNav.style.display = 'none';
+        } else {
+            mobileNav.style.display = 'block';
+        }
+    });
+
+    // Optional: Hide mobile menu when a link is clicked (for better UX)
+    mobileNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileNav.style.display = 'none';
+        });
+    });
+});
