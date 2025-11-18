@@ -249,28 +249,6 @@ body{
     justify-content: flex-end;
 }
 
-/*.content .content-right .tech-visual-img{
-    width: 450px;
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 8px solid rgba(0, 51, 102, 0.1);
-    animation: rotate 10s linear infinite;
-}*/
-
-/*@keyframes rotate {
-    0%{
-        transform: rotate(0deg) scale(1.0);
-    }
-    50%{
-        transform: rotate(180deg) scale(1.02);
-    }
-    100%{
-        transform: rotate(360deg) scale(1.0);
-    }
-}*/
-
 /* --- Category/Services Section --- */
 
 .services-section{
@@ -385,14 +363,8 @@ body{
     letter-spacing: 2px;
 }
 
-.about-content-wrapper {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 60px;
-    text-align: left;
-    align-items: center;
-    margin-bottom: 60px;
-}
+/* OLD .about-content-wrapper style is removed here, 
+   as it now uses repeated .feature-row styles */
 
 .about-text-content .intro-paragraph {
     font-size: 1.2rem;
@@ -400,14 +372,61 @@ body{
     margin-bottom: 40px;
     color: var(--primary-color);
     font-weight: 500;
+    text-align: center;
+    
 }
 
-.about-text-content .feature-block {
+/* .about-text-content .feature-block is no longer needed/used */
+
+/* 🆕 FEATURE ROW STYLES (Image next to Paragraph) */
+.feature-row {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
+    /* Two columns: 60% for text, 40% for image */
+    grid-template-columns: 3fr 2fr; 
+    gap: 80px; /* Larger gap for visual separation */
+    align-items: center;
+    margin-bottom: 100px; /* Space between each feature row */
+    text-align: left;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/* Style for alternating the layout (Image on the Left for the second feature) */
+.feature-row.reverse-layout {
+    grid-template-areas: "image text";
+}
+.feature-row.reverse-layout .feature-text-block {
+    grid-area: text;
+}
+.feature-row.reverse-layout .feature-image-block {
+    grid-area: image;
+}
+
+/* Text Block Styling (Ensuring padding is within the block) */
+.feature-text-block {
+    padding-right: 0; /* Adjusted to 0, margin on row handles spacing */
+}
+
+/* Image Block Styling */
+.feature-image-block {
+    text-align: center;
+}
+
+.feature-image {
+    width: 100%;
+    max-width: 400px; /* Set a max-width for image scaling */
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s ease-in-out;
+}
+
+.feature-image:hover {
+    transform: scale(1.03);
+}
+
+/* Styling for the content card inside the feature row */
 .feature-item {
     display: flex;
     align-items: flex-start;
@@ -444,24 +463,25 @@ body{
     color: var(--text-color);
 }
 
-.about-image-column {
-    text-align: center;
-}
-
-.about-image-column img {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+/* 🗑️ CLEANUP: Removed conflicting image column styles */
+.about-image-column, 
+.about-image-column img, 
+.about-column-image-single,
+.about-image-column img:nth-child(1),
+.about-image-column img:nth-child(2),
+.about-image-column img:nth-child(3) {
+    display: none; /* Hide or remove these styles as they are replaced by .feature-row */
 }
 
 .about-image-column .image-caption {
+    display: block; /* Keep caption visible if it's placed outside the image block */
     font-style: italic;
     font-size: 0.9rem;
     margin-top: 15px;
     color: var(--dark-grey);
+    text-align: center;
 }
+
 
 /* --- CAREER SECTION (TALENT POOL) --- */
 .career-section {
@@ -663,6 +683,13 @@ footer {
     ======================================= */
 
 /* Tablet View (Max 1024px) */
+@media (max-width: 1024px) {
+    /* Adjustments for feature rows on larger tablets/smaller desktops */
+    .feature-row {
+        gap: 40px; /* Reduce gap */
+    }
+}
+
 @media (max-width: 768px) {
     .navbar-container {
         padding: 10px 0;
@@ -678,9 +705,6 @@ footer {
     .content .content-left button, .secondary-cta {
         margin: 0 auto 15px auto;
     }
-    /*.content .content-right .tech-visual-img {
-        width: 350px;
-    }*?
 
     /* Services Section */
     .category .list .card-list {
@@ -694,13 +718,35 @@ footer {
         margin: 0 -5%;
     }
 
-    /* About Us Section */
+    /* About Us Section - Feature Rows: STACKED on Tablet/Mobile */
+    .feature-row {
+        grid-template-columns: 1fr; /* Single column */
+        gap: 30px;
+        margin-bottom: 60px;
+        padding: 0 10px;
+    }
+
+    /* Reset the reverse order on mobile so text always comes first */
+    .feature-row.reverse-layout {
+        grid-template-areas: none;
+    }
+    .feature-row.reverse-layout .feature-text-block {
+        grid-area: auto;
+    }
+    /* Set display order for mobile: Text first, Image second */
+    .feature-row.reverse-layout .feature-image-block,
+    .feature-row .feature-image-block {
+        order: 2; 
+    }
+    .feature-row.reverse-layout .feature-text-block,
+    .feature-row .feature-text-block {
+        order: 1; 
+    }
+
     .about-content-wrapper {
+        /* Removed old conflicting styles */
         grid-template-columns: 1fr;
         gap: 40px;
-    }
-    .about-image-column img {
-        max-width: 500px;
     }
 }
 
@@ -770,10 +816,7 @@ footer {
     .content .content-left .info p {
         font-size: 1rem;
     }
-    /* Hiding the image on the smallest screens to prioritize content and load speed */
-    /*.content .content-right {
-        display: none;
-    }*/
+
     .hero-section {
         padding: 80px 0 100px;
     }
