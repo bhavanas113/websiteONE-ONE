@@ -17,7 +17,7 @@ html {
     --dark-grey: #6c757d; /* Muted Grey for subtle text */
     
     /* NEW: Social Media Brand Colors */
-    --linkedin-color: #0A66C2; 
+    --linkedin-color: #0A66C2;
     --whatsapp-color: #25D366;
     --instagram-color: #C13584; /* Representative of the gradient */
     --email-color: #D93025; /* Standard red for Gmail/Mail */
@@ -34,17 +34,18 @@ html {
 }
 
 body{
-    padding: 0 5%; 
+    padding: 0 5%;
     background-color: var(--secondary-color);
     font-family: 'Poppins', sans-serif;
     color: var(--text-color);
     /* NEW: Prevent horizontal scroll if global padding is inconsistent */
-    overflow-x: hidden; 
+    overflow-x: hidden;
 }
 
 
 /* --- Global Styles for Smooth Scrolling and Elements --- */
-.services-section, .about-us-section, .contact-us, .projects-section {
+/* Updated to include #Career anchor */
+.services-section, .about-us-section, .contact-us, .career-section {
     scroll-margin-top: 20px;
 }
 
@@ -73,7 +74,7 @@ body{
     justify-content: space-between;
     align-items: center;
     /* Adjusted padding for the large logo */
-    padding: 15px 0; 
+    padding: 15px 0;
 }
 
 /* LOGO STYLING (FINAL BIG SIZE) */
@@ -84,7 +85,7 @@ body{
 }
 
 .desktop-nav {
-    display: block; 
+    display: block;
 }
 
 .navbar-container nav ul{
@@ -94,7 +95,7 @@ body{
 }
 
 .navbar-container nav ul li{
-    margin: 0 15px; 
+    margin: 0 15px;
 }
 
 .navbar-container nav ul li a{
@@ -118,12 +119,12 @@ body{
 
 .navbar-container nav ul .active::after{
     content: '';
-    width: 100%; 
+    width: 100%;
     height: 3px;
     background-color: var(--primary-color);
     display: block;
     position: absolute;
-    bottom: -5px; 
+    bottom: -5px;
     left: 0;
     margin-left: 0;
     border-radius: 2px;
@@ -133,19 +134,19 @@ body{
 .auth-buttons a {
     /* Base styles applied to both Sign In and Sign Up links */
     display: inline-block;
-    padding: 8px 18px; 
+    padding: 8px 18px;
     cursor: pointer;
     font-weight: 600;
     font-size: 15px;
     border-radius: 5px;
     transition: all 0.3s;
-    text-decoration: none; 
+    text-decoration: none;
 }
 
 /* Sign In Link Styling */
 .signin-link {
     background: transparent;
-    border: 2px solid transparent; 
+    border: 2px solid transparent;
     color: var(--primary-color);
 }
 
@@ -164,12 +165,12 @@ body{
 }
 
 .signup-link:hover{
-    background-color: var(--accent-color); 
+    background-color: var(--accent-color);
 }
 
 /* Mobile Toggler and Mobile Nav (Hidden on Desktop) */
 .menu-toggle-btn, .mobile-nav {
-    display: none; 
+    display: none;
 }
 
 
@@ -194,7 +195,7 @@ body{
 }
 
 .content .content-left .info h1{
-    font-size: 3.2rem; 
+    font-size: 3.2rem;
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 20px;
@@ -209,7 +210,7 @@ body{
 }
 
 .content .content-left button{
-    padding: 12px 28px; 
+    padding: 12px 28px;
     background-color: var(--primary-color);
     color: var(--light-text-color);
     border-radius: 8px;
@@ -223,7 +224,7 @@ body{
 }
 
 .content .content-left button:hover{
-    background-color: var(--accent-color); 
+    background-color: var(--accent-color);
 }
 
 .secondary-cta {
@@ -241,17 +242,17 @@ body{
 
 .content .content-right{
     display: flex;
-    justify-content: flex-end; 
+    justify-content: flex-end;
 }
 
 .content .content-right .tech-visual-img{
-    width: 450px; 
+    width: 450px;
     max-width: 100%;
     height: auto;
     object-fit: cover;
-    border-radius: 50%; 
-    border: 8px solid rgba(0, 51, 102, 0.1); 
-    animation: rotate 10s linear infinite; 
+    border-radius: 50%;
+    border: 8px solid rgba(0, 51, 102, 0.1);
+    animation: rotate 10s linear infinite;
 }
 
 @keyframes rotate {
@@ -259,7 +260,7 @@ body{
         transform: rotate(0deg) scale(1.0);
     }
     50%{
-        transform: rotate(180deg) scale(1.02); 
+        transform: rotate(180deg) scale(1.02);
     }
     100%{
         transform: rotate(360deg) scale(1.0);
@@ -269,15 +270,15 @@ body{
 /* --- Category/Services Section --- */
 
 .services-section{
-    padding: 50px 0 100px; 
+    padding: 50px 0 100px;
 }
 
 .category .list{
-    width: 100%; 
+    width: 100%;
     margin-top: 50px;
 }
 
-.category .list h2{ 
+.category .list h2{
     font-size: 1.8rem;
     font-weight: 700;
     text-align: center;
@@ -289,29 +290,29 @@ body{
 
 .category .list .card-list{
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 30px; 
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
     max-width: 1100px;
-    margin: 0 auto; 
+    margin: 0 auto;
 }
 
 .category .card-list .card{
-    width: 100%; 
+    width: 100%;
     min-height: 250px;
     display: flex;
     flex-direction: column;
     padding: 25px;
     border-radius: 12px;
     background: var(--light-text-color);
-    box-shadow: 0 4px 15px rgba(0, 51, 102, 0.1); 
-    border: 1px solid var(--light-grey); 
+    box-shadow: 0 4px 15px rgba(0, 51, 102, 0.1);
+    border: 1px solid var(--light-grey);
     transition: all 0.3s ease;
 }
 
 .category .card-list .card:hover {
-    transform: translateY(-5px); 
+    transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 51, 102, 0.2);
-    border-color: var(--accent-color); 
+    border-color: var(--accent-color);
 }
 
 /* Icon style applies to both Font Awesome and Emojis */
@@ -327,7 +328,7 @@ body{
     margin-bottom: 10px;
 }
 
-.category .card-list .card .title h3{ 
+.category .card-list .card .title h3{
     text-align: left;
     font-weight: 700;
     font-size: 1rem;
@@ -341,7 +342,7 @@ body{
     font-weight: 400;
     line-height: 1.4;
     margin-bottom: 20px;
-    flex-grow: 1; 
+    flex-grow: 1;
 }
 
 .card-link {
@@ -355,21 +356,21 @@ body{
     text-decoration: underline;
 }
 
-/* --- PROJECTS SECTION (NEW) --- */
-.projects-section {
+/* --- CAREER SECTION (UPDATED FROM PROJECTS) --- */
+.career-section {
     padding: 80px 0;
     text-align: center;
     background-color: var(--light-grey);
     margin: 0 -5%;
 }
 
-.projects-section .container {
+.career-section .container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-.projects-section h2 {
+.career-section h2 {
     font-size: 2.2rem;
     font-weight: 700;
     margin-bottom: 20px;
@@ -387,73 +388,49 @@ body{
     margin-right: auto;
 }
 
-.project-grid {
+.job-posting-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Single column layout for better showcase */
-    gap: 60px;
+    /* Responsive grid: 2 or 3 columns depending on space, minimum 300px wide */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
-.project-card {
-    display: flex;
-    align-items: center;
+.job-card {
     background-color: var(--secondary-color);
+    padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 8px 30px rgba(0, 51, 102, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 51, 102, 0.1);
     text-align: left;
-    overflow: hidden;
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
 }
 
-.project-card:hover {
+.job-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 51, 102, 0.2);
+    border-top: 4px solid var(--accent-color);
 }
 
-.project-card:nth-child(even) {
-    flex-direction: row-reverse; /* Alternate image and text alignment */
+.job-card h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
 }
 
-.project-image {
-    width: 50%;
-    height: auto;
-    object-fit: cover;
+.job-card .location-type {
+    font-size: 0.95rem;
+    color: var(--dark-grey);
+    margin-bottom: 15px;
     display: block;
 }
 
-.project-info {
-    width: 50%;
-    padding: 40px;
-}
-
-.project-info h3 {
-    font-size: 1.7rem;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-}
-
-.project-description {
+.job-card p {
     font-size: 1rem;
     line-height: 1.6;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
-.tech-used {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 30px;
-    font-size: 0.95rem;
-}
-
-.tech-used li {
-    margin-bottom: 5px;
-    color: var(--text-color);
-}
-
-.tech-used li strong {
-    font-weight: 600;
-    color: var(--accent-color);
-}
-
-.project-cta-link {
+.apply-link {
     display: inline-block;
     padding: 10px 25px;
     background-color: var(--accent-color);
@@ -464,18 +441,18 @@ body{
     transition: background-color 0.3s;
 }
 
-.project-cta-link:hover {
+.apply-link:hover {
     background-color: #1e7d3a;
 }
-/* --- END PROJECTS SECTION --- */
+/* --- END CAREER SECTION --- */
 
 
 /* --- ABOUT US SECTION --- */
 
 .about-us-section {
     padding: 100px 0;
-    background-color: var(--light-grey); 
-    margin: 0 -5%; 
+    background-color: var(--light-grey);
+    margin: 0 -5%;
     text-align: center;
 }
 
@@ -522,7 +499,7 @@ body{
     display: flex;
     align-items: flex-start;
     gap: 20px;
-    background-color: var(--secondary-color); 
+    background-color: var(--secondary-color);
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0, 51, 102, 0.08);
@@ -537,7 +514,7 @@ body{
 .feature-icon {
     font-size: 2.5rem;
     line-height: 1;
-    color: var(--accent-color); 
+    color: var(--accent-color);
     flex-shrink: 0;
 }
 
@@ -551,7 +528,7 @@ body{
 .feature-item p {
     font-size: 1rem;
     line-height: 1.6;
-    color: var(--text-color); 
+    color: var(--text-color);
 }
 
 .about-image-column {
@@ -570,19 +547,19 @@ body{
     font-style: italic;
     font-size: 0.9rem;
     margin-top: 15px;
-    color: var(--dark-grey); 
+    color: var(--dark-grey);
 }
 
 
 /* --- CONTACT US SECTION --- */
 
 .contact-us {
-    background-color: var(--primary-color); 
+    background-color: var(--primary-color);
     color: var(--light-text-color);
     padding: 80px 5%;
     text-align: center;
     /* FIX: Match section margin to body padding for wide screens */
-    margin: 0 -5%; 
+    margin: 0 -5%;
     border-radius: 10px 10px 0 0;
 }
 
@@ -616,7 +593,7 @@ body{
 .detail-item i {
     font-size: 1.5rem;
     margin-right: 10px;
-    color: var(--accent-color); 
+    color: var(--accent-color);
 }
 
 .detail-item a {
@@ -632,7 +609,7 @@ body{
 /* 🟢 Social Icons with Brand Colors */
 .social-icons a {
     font-size: 1.8rem;
-    color: var(--secondary-color); 
+    color: var(--secondary-color);
     margin: 0 15px;
     transition: color 0.3s, transform 0.3s;
 }
@@ -640,7 +617,7 @@ body{
     color: var(--linkedin-color);
 }
 .social-icons a[aria-label="Instagram"] i {
-    color: var(--instagram-color); 
+    color: var(--instagram-color);
 }
 .social-icons a[aria-label="WhatsApp"] i {
     color: var(--whatsapp-color);
@@ -657,19 +634,19 @@ body{
 footer {
     text-align: center;
     padding: 20px 0;
-    border-top: 1px solid #dee2e6; 
+    border-top: 1px solid #dee2e6;
     font-size: 0.9rem;
     color: var(--dark-grey);
-    background-color: var(--light-grey); 
+    background-color: var(--light-grey);
     /* FIX: Match section margin to body padding for wide screens */
-    margin: 0 -5%; 
+    margin: 0 -5%;
 }
 
 
 /* --- Scroll-bar --- */
 
 ::-webkit-scrollbar{
-    width: 8px; 
+    width: 8px;
 }
 
 ::-webkit-scrollbar-thumb{
@@ -678,7 +655,7 @@ footer {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: var(--accent-color); 
+    background-color: var(--accent-color);
 }
 
 /* =======================================
@@ -688,7 +665,7 @@ footer {
 /* Tablet View (Max 1024px) */
 @media (max-width: 1024px) {
     .navbar-container {
-        padding: 10px 0; 
+        padding: 10px 0;
     }
     .content {
         grid-template-columns: 1fr;
@@ -711,25 +688,12 @@ footer {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
 
-    /* Projects Section */
-    .projects-section, .about-us-section, .contact-us, footer {
+    /* Career Section (Updated) */
+    .career-section, .about-us-section, .contact-us, footer {
         /* Adjusted margins to maintain visual alignment with body padding */
         margin: 0 -5%;
     }
-    .project-card, 
-    .project-card:nth-child(even) {
-        flex-direction: column;
-    }
-    .project-image,
-    .project-info {
-        width: 100%;
-    }
-    .project-image {
-        max-height: 350px; /* Slightly taller for tablet view */
-    }
-    .project-info {
-        padding: 40px; /* Consistent padding */
-    }
+    /* Note: job-posting-grid uses auto-fit, so no explicit column change needed here */
 
     /* About Us Section */
     .about-content-wrapper {
@@ -745,16 +709,15 @@ footer {
 @media (max-width: 768px) {
     /* **CRITICAL FIX**: Change body padding to prevent content crowding */
     body {
-        padding: 0 3%; 
+        padding: 0 3%;
     }
     .navbar-container {
-        padding: 10px 0; 
+        padding: 10px 0;
     }
     
     /* FIX: Match ALL full-width sections to the new mobile body padding */
-    .projects-section, .about-us-section, .contact-us, footer {
+    .career-section, .about-us-section, .contact-us, footer {
         margin: 0 -3%;
-        /* Also adjust padding on contact-us for consistency */
     }
     .contact-us {
         padding: 50px 3%;
@@ -763,7 +726,7 @@ footer {
 
     /* NAVIGATION HIDING/SHOWING */
     .desktop-nav, .auth-buttons {
-        display: none; 
+        display: none;
     }
     .menu-toggle-btn {
         display: block;
@@ -774,9 +737,9 @@ footer {
     }
     
     .mobile-nav {
-        display: block; 
-        background-color: var(--light-grey); 
-        border-top: 1px solid rgba(0, 51, 102, 0.1); 
+        display: block;
+        background-color: var(--light-grey);
+        border-top: 1px solid rgba(0, 51, 102, 0.1);
     }
     .mobile-nav ul {
         display: flex;
@@ -797,7 +760,7 @@ footer {
     
     /* Logo on mobile - size reduced so it isn't overwhelming */
     .logo .site-logo {
-        height: 80px; 
+        height: 80px;
         max-height: 80px;
     }
 
@@ -810,7 +773,7 @@ footer {
     }
     /* Hiding the image on the smallest screens to prioritize content and load speed */
     .content .content-right {
-        display: none; 
+        display: none;
     }
     .hero-section {
         padding: 30px 0 50px;
@@ -823,7 +786,7 @@ footer {
     }
     .category .list .card-list {
         /* Single column for easy scrolling */
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
         gap: 20px;
     }
     .category .card-list .card {
@@ -855,7 +818,7 @@ footer {
     z-index: 100; /* Sit on top of everything */
     left: 0;
     top: 0;
-    width: 100%; 
+    width: 100%;
     height: 100%;
     overflow: auto; /* Enable scroll if needed */
     background-color: rgba(0, 0, 0, 0.6); /* Black w/ a bit more opacity for better focus */
@@ -865,29 +828,29 @@ footer {
 /* Modal Content/Box */
 .modal-content {
     /* FIX: Use RGBA value for reliable transparency */
-    background-color: rgba(255, 255, 255, 0.95); 
+    background-color: rgba(255, 255, 255, 0.95);
     margin: 10% auto; /* 10% from the top and centered */
     padding: 30px 40px;
     border: 1px solid rgba(0, 51, 102, 0.1);
-    width: 90%; 
+    width: 90%;
     max-width: 450px;
     border-radius: 15px;
     position: relative;
 
     /* Elegant Border using Primary Accent */
-    border: 1px solid rgba(0, 51, 102, 0.3); 
+    border: 1px solid rgba(0, 51, 102, 0.3);
 
     /* Glassmorphism Effect - Blur the content behind the modal */
-    backdrop-filter: blur(10px); 
+    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px); /* For Safari support */
 
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5),
                 0 0 20px rgba(0, 51, 102, 0.2);
-    transition: all 0.5s ease-in-out;           
+    transition: all 0.5s ease-in-out;
 }
 
 .modal-content h3 {
-    color: var(--primary-color); 
+    color: var(--primary-color);
     font-size: 2rem; /* Slightly reduced size */
     margin-bottom: 25px;
     text-align: center;
@@ -896,7 +859,7 @@ footer {
 
 /* Close Button */
 .close-btn {
-    color: var(--dark-grey); 
+    color: var(--dark-grey);
     font-size: 30px; /* Reduced size */
     position: absolute;
     top: 5px;
@@ -927,8 +890,8 @@ footer {
     margin-bottom: 15px;
 
     /* Use a light background for better contrast in a light modal, but slightly transparent */
-    background-color: var(--light-grey); 
-    border: 1px solid var(--dark-grey); 
+    background-color: var(--light-grey);
+    border: 1px solid var(--dark-grey);
     border-radius: 8px;
     box-sizing: border-box;
     color: var(--text-color);
@@ -945,7 +908,7 @@ footer {
     padding: 15px;
     margin-top: 25px;
     margin-bottom: 10px;
-    background-color: var(--primary-color); 
+    background-color: var(--primary-color);
     color: var(--light-text-color);
     border: none;
     border-radius: 8px;
