@@ -459,7 +459,7 @@ body{
     color: var(--dark-grey);
 }
 
-/* --- CAREER SECTION (NO OPENINGS) --- */
+/* --- CAREER SECTION (TALENT POOL) --- */
 .career-section {
     padding: 80px 0;
     text-align: center;
@@ -491,31 +491,38 @@ body{
     margin-right: auto;
 }
 
-/* STYLES for No Openings Block */
-.no-openings {
+/* STYLES for Talent Pool Block */
+.talent-pool-invitation {
     display: flex;
     justify-content: center;
 }
 
-.no-openings-content {
+.talent-pool-content {
     background-color: var(--secondary-color);
     padding: 40px 30px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 51, 102, 0.15);
-    max-width: 600px;
+    max-width: 650px; 
     text-align: center;
 }
 
-.no-openings-content h3 {
+.talent-pool-content h3 {
     font-size: 1.8rem;
     color: var(--primary-color);
     margin-bottom: 20px;
 }
 
-.no-openings-content p {
+.talent-pool-content p {
     font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 20px;
+}
+
+.call-to-action-note {
+    font-size: 1rem !important; 
+    font-style: italic;
+    color: var(--dark-grey);
+    margin-top: 10px !important;
 }
 
 .tech-stack-list {
@@ -782,7 +789,7 @@ footer {
     }
     
     /* Career Section Mobile Adjustment */
-    .no-openings-content {
+    .talent-pool-content {
         padding: 30px 20px;
     }
     .tech-stack-list {
@@ -852,95 +859,4 @@ footer {
 .modal-content h3 {
     color: var(--primary-color);
     font-size: 2rem; /* Slightly reduced size */
-    margin-bottom: 25px;
-    text-align: center;
-    font-weight: 700;
-}
-
-/* Close Button */
-.close-btn {
-    color: var(--dark-grey);
-    font-size: 30px; /* Reduced size */
-    position: absolute;
-    top: 5px;
-    right: 15px;
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-.close-btn:hover,
-.close-btn:focus {
-    color: var(--primary-color);
-    
-}
-
-/* Form Styling */
-.modal-content form label {
-    display: block;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-weight: 500;
-    color: var(--text-color); /* Readable dark text */
-    font-size: 0.9rem;
-}
-
-.modal-content form input {
-    width: 100%;
-    padding: 14px 12px;
-    margin-bottom: 15px;
-
-    /* Use a light background for better contrast in a light modal, but slightly transparent */
-    background-color: var(--light-grey);
-    border: 1px solid var(--dark-grey);
-    border-radius: 8px;
-    box-sizing: border-box;
-    color: var(--text-color);
-    transition: border-color 0.3s;
-}
-
-.modal-content form input:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 8px rgba(0, 51, 102, 0.3);
-}
-
-.submit-btn {
-    padding: 15px;
-    margin-top: 25px;
-    margin-bottom: 10px;
-    background-color: var(--primary-color);
-    color: var(--light-text-color);
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1rem; /* Larger, more clickable */
-    font-weight: 700;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    width: 100%; /* Full width submit button */
-}
-
-.submit-btn:hover {
-    background-color: var(--accent-color); /* Hover color for consistency */
-    transform: translateY(-2px); /* Subtle lift effect */
-}
-
-.forgot-password, .terms a {
-    display: block;
-    text-align: center;
-    color: var(--primary-color);
-    text-decoration: none;
-    font-size: 0.9rem;
-    margin-top: 10px;
-    transition: color 0.3s;
-}
-
-.forgot-password:hover, .terms a:hover {
-    color: var(--accent-color);
-}
-
-.terms {
-    font-size: 0.8rem;
-    color: var(--dark-grey);
-    text-align: center;
-    margin-top: 15px;
-}
+    margin-bottom:
