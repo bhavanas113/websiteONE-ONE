@@ -8,6 +8,7 @@
         <title>ONE & ONE Technologies</title>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     </head>
     <body>
         <section class="header">
@@ -43,7 +44,7 @@
             </nav>
         </section>
 
-        <section class="grid hero-section">
+        <section class="grid hero-section" data-aos="fade-up">
             <div class="content">
                 <div class="content-left">
                     <div class="info">
@@ -60,22 +61,22 @@
             <div class="list">
                 <h2>WHAT WE PROVIDE</h2>
                 
-                <div class="core-services-circle-container">
+                <div class="core-services-circle-container" data-aos="fade-down">
                     <div class="central-circle">
                         <img src="1763090313808 (1).png" alt="ONE & ONE Tech Logo">
                     </div>
 
-                    <div class="service-point point-top">
+                    <div class="service-point point-top" data-aos="fade" data-aos-delay="200">
                         <div class="service-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
                         <h4>LEGACY MODERNIZATION</h4>
                     </div>
                     
-                    <div class="service-point point-left">
+                    <div class="service-point point-left" data-aos="fade" data-aos-delay="400">
                         <div class="service-icon">📱</div>
                         <h4>UNIFIED WEB & MOBILE</h4>
                     </div>
                     
-                    <div class="service-point point-right">
+                    <div class="service-point point-right" data-aos="fade" data-aos-delay="600">
                         <div class="service-icon">🚀</div>
                         <h4>ULTIMATE SCALABILITY</h4>
                     </div>
@@ -85,32 +86,32 @@
                     <h3>Specialized Verticals & Sub-Services</h3>
                     <div class="services-grid">
                         
-                        <div class="grid-item">
+                        <div class="grid-item" data-aos="fade-up" data-aos-delay="50">
                             <i class="fa-solid fa-hotel"></i>
                             <p>Hospitality Mgmt. / Restaurant Mgmt. (ERP)</p>
                         </div>
                         
-                        <div class="grid-item">
+                        <div class="grid-item" data-aos="fade-up" data-aos-delay="150">
                             <i class="fa-solid fa-house-chimney-window"></i>
                             <p>Restaurant / Hotels / Lodging (PMS)</p>
                         </div>
 
-                        <div class="grid-item">
+                        <div class="grid-item" data-aos="fade-up" data-aos-delay="250">
                             <i class="fa-solid fa-truck-fast"></i>
                             <p>Logistic Mgmt. / Real Time Tracking</p>
                         </div>
 
-                        <div class="grid-item">
+                        <div class="grid-item" data-aos="fade-up" data-aos-delay="350">
                             <i class="fa-solid fa-cart-shopping"></i>
                             <p>E-Commerce Exclusive Websites</p>
                         </div>
 
-                        <div class="grid-item">
+                        <div class="grid-item" data-aos="fade-up" data-aos-delay="450">
                             <i class="fa-solid fa-wallet"></i>
                             <p>Portfolio Site / Websites</p>
                         </div>
                         
-                        <div class="grid-item">
+                        <div class="grid-item" data-aos="fade-up" data-aos-delay="550">
                             <i class="fa-solid fa-drafting-compass"></i>
                             <p>UI/UX Services</p>
                         </div>
@@ -118,12 +119,13 @@
                 </div>
             </div>
         </section>
+        
         <section class="about-us-section" id="about-us">
             <div class="container">
                 <h2>ENGINEERING EXCEPTIONAL DIGITAL EXPERIENCES</h2>
                 
                 <div class="about-content-wrapper">
-                    <div class="feature-row">
+                    <div class="feature-row" data-aos="fade-right">
                         <div class="feature-text-block">
                             <div class="feature-item">
                                 <div class="feature-icon">✨</div>
@@ -136,7 +138,7 @@
                         </div>
                     </div>
 
-                    <div class="feature-row reverse-layout">
+                    <div class="feature-row reverse-layout" data-aos="fade-left">
                         <div class="feature-text-block">
                             <div class="feature-item">
                                 <div class="feature-icon">🌐</div>
@@ -149,7 +151,7 @@
                         </div>
                     </div>
 
-                    <div class="feature-row">
+                    <div class="feature-row" data-aos="fade-right">
                         <div class="feature-text-block">
                             <div class="feature-item">
                                 <div class="feature-icon">✅</div>
@@ -165,7 +167,7 @@
             </div>
         </section>
 
-        <section class="career-section" id="Career">
+        <section class="career-section" id="Career" data-aos="fade-up">
             <div class="container">
                 <h2>CRAFTING THE FUTURE, TOGETHER</h2>
                 <p class="section-intro">
@@ -190,7 +192,7 @@
             </div>
         </section>
 
-        <section class="contact-us" id="contact">
+        <section class="contact-us" id="contact" data-aos="fade-up" data-aos-delay="100">
             <div class="contact-container">
                 <h2>CONTACT US FOR ASSESSMENT</h2>
                 <p class="contact-intro-text">
@@ -257,6 +259,12 @@
             </div>
         </div>
         <script src="script.js"></script>
-
+        <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                duration: 1000, // Time in milliseconds for the animation to complete
+                once: true,     // Animation should only happen once on scroll down
+            });
+        </script>
     </body>
 </html>
