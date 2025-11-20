@@ -245,13 +245,13 @@ body{
 }
 
 /* ---------------------------------------------------- */
-/* COMPACT & ELEGANT CIRCULAR LAYOUT (SMALLER) */
+/* COMPACT & ELEGANT CIRCULAR LAYOUT (LAPTOP DEFAULT) */
 /* ---------------------------------------------------- */
 
 .core-services-circle-container {
     position: relative;
-    width: 500px; /* REDUCED to be compact */
-    height: 500px; /* REDUCED to be compact */
+    width: 500px; /* Compact for Laptop */
+    height: 500px; /* Compact for Laptop */
     margin: 30px auto 100px auto; 
     border-radius: 50%;
     /* A subtle dual-ring border effect */
@@ -264,10 +264,9 @@ body{
 
 /* The Compact Center Circle */
 .central-circle {
-    width: 220px; /* REDUCED from 320px */
+    width: 220px; 
     height: 220px; 
     border-radius: 50%;
-    /* Deep, rich gradient */
     background: linear-gradient(135deg, #002244 0%, var(--primary-color) 100%);
     display: flex;
     flex-direction: column;
@@ -276,20 +275,18 @@ body{
     text-align: center;
     color: var(--light-text-color);
     z-index: 10;
-    /* Refined Border */
     border: 3px solid var(--accent-color);
-    /* Pulse Animation */
     animation: pulse-glow 3s infinite;
 }
 
 .central-circle img {
-    width: 90px; /* Smaller logo */
+    width: 90px; 
     height: auto;
     margin-bottom: 8px;
     filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3)); 
 }
 
-/* Pulse Animation Keyframes (Subtler for smaller size) */
+/* Pulse Animation Keyframes */
 @keyframes pulse-glow {
     0% {
         box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.4), 0 0 20px rgba(0,0,0,0.5);
@@ -305,16 +302,15 @@ body{
 /* Surrounding Service Points (Satellites) */
 .service-point {
     position: absolute;
-    width: 180px; /* Narrower width */
+    width: 180px; 
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Floating animation */
     animation: float 4s ease-in-out infinite;
 }
 
-/* Add distinct delay for each point so they float independently */
+/* Satellite Positioning for Laptop */
 .point-top { 
     top: -25px; 
     left: calc(50% - 90px); 
@@ -322,13 +318,13 @@ body{
 }
 .point-left { 
     top: 50%; 
-    left: -70px; /* Closer to center */
+    left: -70px; 
     transform: translateY(-50%); 
     animation-delay: 1s;
 }
 .point-right { 
     top: 50%; 
-    right: -70px; /* Closer to center */
+    right: -70px; 
     transform: translateY(-50%); 
     animation-delay: 2s;
 }
@@ -338,7 +334,6 @@ body{
     font-size: 1.5rem;
     color: var(--accent-color);
     margin-bottom: 10px;
-    /* Create a "Card" look for the icon */
     background-color: white;
     width: 60px;
     height: 60px;
@@ -348,7 +343,6 @@ body{
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Hover effect for icons */
 .service-point:hover .service-icon {
     transform: scale(1.1);
     box-shadow: 0 10px 25px rgba(40, 167, 69, 0.3);
@@ -365,10 +359,9 @@ body{
     backdrop-filter: blur(2px);
 }
 
-/* Floating Animation Keyframes */
 @keyframes float {
     0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); } /* Moves up slightly */
+    50% { transform: translateY(-10px); } 
     100% { transform: translateY(0px); }
 }
 
@@ -892,7 +885,7 @@ footer {
 }
 
 
-/* Mobile View (Max 768px) */
+/* Mobile View (Max 768px) - COMPLETE REFACTOR FOR VERTICAL STACK */
 @media (max-width: 768px) {
     body {
         padding: 0 3%;
@@ -927,36 +920,74 @@ footer {
         margin: 10px auto;
     }
 
-    /* Services Section - Tighter for Mobile */
-    .category .list h2 {
-        font-size: 1.5rem;
-        margin-bottom: 40px;
-    }
+    /* --------------------------------------------------- */
+    /* TRANSFORM CIRCLE TO VERTICAL STACK ON MOBILE */
+    /* --------------------------------------------------- */
     .core-services-circle-container {
-        width: 320px;
-        height: 320px;
-        margin-bottom: 60px;
+        width: 100%; /* Full width of container */
+        height: auto; /* Grow naturally */
+        background: none; /* Remove circle gradient */
+        border: none; /* Remove circle border */
+        box-shadow: none;
+        border-radius: 0;
+        display: flex;
+        flex-direction: column; /* Vertical Stack */
+        align-items: center;
+        gap: 40px; /* Space between Logo and List */
+        margin: 40px 0;
     }
+
+    /* Maintain Pulse on Mobile Logo */
     .central-circle {
-        width: 140px;
-        height: 140px;
+        width: 160px;
+        height: 160px;
+        margin-bottom: 20px;
     }
     .central-circle img {
-        width: 60px;
+        width: 70px;
     }
+
+    /* Reset Satellites to look like Cards */
     .service-point {
-        width: 120px;
+        position: relative; /* Reset absolute */
+        top: auto !important; 
+        left: auto !important; 
+        right: auto !important; 
+        bottom: auto !important;
+        transform: none !important;
+        
+        width: 100%;
+        max-width: 300px; /* Nice card width */
+        margin: 0 auto;
+        animation: none; /* Disable float on mobile for stability */
+        
+        /* Card Look */
+        background-color: white;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid rgba(0,0,0,0.05);
     }
+
     .service-icon {
-        width: 45px;
-        height: 45px;
-        line-height: 45px;
-        font-size: 1.2rem;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 1.3rem;
     }
-    .point-top { top: -20px; left: calc(50% - 60px); }
-    .point-left { top: 50%; left: -45px; }
-    .point-right { top: 50%; right: -45px; }
+
+    .service-point h4 {
+        background: none; /* Remove backdrop blur box */
+        color: var(--primary-color);
+        margin-top: 10px;
+        font-size: 1rem;
+    }
     
+    
+    /* Rest of Mobile Adjustments */
     .specialized-services-list h3 {
         font-size: 1.4rem;
     }
