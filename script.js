@@ -1,9 +1,8 @@
-/**
- * Modal control functions for Sign In and Sign Up pop-ups.
- */
+// --- Modal Handlers ---
 
 function openSignInModal() {
-    document.getElementById('signInModal').style.display = 'block';
+    // CRITICAL: Set display to 'flex' to make it visible and centered
+    document.getElementById('signInModal').style.display = 'flex';
 }
 
 function closeSignInModal() {
@@ -11,48 +10,44 @@ function closeSignInModal() {
 }
 
 function openSignUpModal() {
-    document.getElementById('signUpModal').style.display = 'block';
+    // CRITICAL: Set display to 'flex' to make it visible and centered
+    document.getElementById('signUpModal').style.display = 'flex';
 }
 
 function closeSignUpModal() {
     document.getElementById('signUpModal').style.display = 'none';
 }
 
-// Close the modal if the user clicks anywhere outside of it
+// Close the modal if the user clicks anywhere outside of the modal content
 window.onclick = function(event) {
     const signInModal = document.getElementById('signInModal');
     const signUpModal = document.getElementById('signUpModal');
     
-    // If the click target is the modal background, close the modal
+    // Check if the click occurred on the modal background itself (not the content)
     if (event.target == signInModal) {
-        signInModal.style.display = "none";
+        signInModal.style.display = 'none';
     }
     if (event.target == signUpModal) {
-        signUpModal.style.display = "none";
+        signUpModal.style.display = 'none';
     }
 }
 
-/**
- * Mobile Navigation Toggle (Hamburger Menu)
- */
+// --- Mobile Navigation Handler ---
 
 document.addEventListener('DOMContentLoaded', () => {
-    const menuToggleBtn = document.querySelector('.menu-toggle-btn');
+    const menuToggle = document.querySelector('.menu-toggle-btn');
     const mobileNav = document.querySelector('.mobile-nav');
-
-    menuToggleBtn.addEventListener('click', () => {
-        // Toggle the visibility of the mobile navigation menu
-        if (mobileNav.style.display === 'block') {
-            mobileNav.style.display = 'none';
-        } else {
-            mobileNav.style.display = 'block';
-        }
+    
+    // Toggle the 'open' class on menu click (CSS handles the max-height transition)
+    menuToggle.addEventListener('click', () => {
+        mobileNav.classList.toggle('open');
     });
 
-    // Optional: Hide mobile menu when a link is clicked (for better UX)
-    mobileNav.querySelectorAll('a').forEach(link => {
+    // Close mobile menu when a link is clicked
+    const navLinks = mobileNav.querySelectorAll('a');
+    navLinks.forEach(link => {
         link.addEventListener('click', () => {
-            mobileNav.style.display = 'none';
+            mobileNav.classList.remove('open');
         });
     });
 });
