@@ -136,8 +136,8 @@ body{
     border: 2px solid var(--primary-color);
 }
 .auth-buttons .signup-link:hover {
-    background-color: var(#4e68f9);
-    border-color: var(#4e68f9);
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
 }
 
 .menu-toggle-btn {
@@ -217,7 +217,7 @@ body{
 }
 
 .content .content-left button:hover {
-    background-color: var(#4e68f9);
+    background-color: var(--accent-color);
 }
 
 .content .content-left .secondary-cta{
@@ -229,7 +229,7 @@ body{
 }
 
 .content .content-left .secondary-cta:hover {
-    color: var(#4e68f9);
+    color: var(--accent-color);
 }
 
 
@@ -281,7 +281,7 @@ body{
     text-align: center;
     color: var(--light-text-color);
     z-index: 10;
-    border: 3px solid var(#4e68f9);
+    border: 3px solid var(--accent-color);
     animation: pulse-glow 3s infinite;
 }
 
@@ -338,7 +338,7 @@ body{
 /* Icon styling inside the satellites */
 .service-icon {
     font-size: 1.5rem;
-    color: var(#4e68f9);
+    color: var(--accent-color);
     margin-bottom: 10px;
     background-color: white;
     width: 60px;
@@ -388,7 +388,7 @@ body{
     color: var(--primary-color);
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    border-bottom: 4px solid var(#4e68f9);
+    border-bottom: 4px solid var(--accent-color);
     display: inline-block;
     padding-bottom: 10px;
 }
@@ -496,7 +496,7 @@ body{
 .feature-icon {
     font-size: 2.5rem;
     margin-bottom: 15px;
-    color: var(#4e68f9); /* Use a vibrant color for icons */
+    color: var(--accent-color); /* Use a vibrant color for icons */
 }
 
 .feature-image {
@@ -546,7 +546,7 @@ body{
 
 .talent-pool-invitation h3 {
     font-size: 1.5rem;
-    color: var(#4e68f9);
+    color: var(--accent-color);
     margin-bottom: 15px;
 }
 
@@ -584,7 +584,7 @@ body{
 }
 
 .primary-cta-link:hover {
-    background-color: var(#4e68f9);
+    background-color: var(--accent-color);
 }
 
 
@@ -637,7 +637,7 @@ body{
 .detail-item i {
     font-size: 1.8rem;
     margin-right: 15px;
-    color: var(#4e68f9);
+    color: var(--accent-color);
 }
 
 .detail-item a {
@@ -648,7 +648,7 @@ body{
 }
 
 .detail-item a:hover {
-    color: var(#4e68f9);
+    color: var(--accent-color);
 }
 
 .social-icons {
@@ -663,27 +663,27 @@ body{
 }
 
 .social-icons a:hover {
-    color: var(#4e68f9);
+    color: var(--accent-color);
     transform: scale(1.1) translateY(-3px);
 }
 
 .secondary-cta-contact {
     display: inline-block;
     padding: 14px 30px; 
-    background-color: var(#4e68f9);
+    background-color: var(--accent-color);
     color: var(--primary-color);
     border-radius: 8px;
     text-decoration: none;
     font-size: 17px;
     font-weight: 700;
     transition: background-color 0.3s, color 0.3s;
-    border: 2px solid var(#4e68f9);
+    border: 2px solid var(--accent-color);
 }
 
 .secondary-cta-contact:hover {
     background-color: transparent;
-    color: var(-#4e68f9);
-    border-color: var(#4e68f9);
+    color: var(--accent-color);
+    border-color: var(--accent-color);
 }
 
 /* --- FOOTER --- */
@@ -769,7 +769,7 @@ footer {
 }
 
 .modal-content .submit-btn:hover {
-    background-color: var(#4e68f9);
+    background-color: var(--accent-color);
 }
 
 .modal-content .close-btn {
