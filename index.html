@@ -2,19 +2,19 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE-edge">
-        <link rel="stylesheet" href="style.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ONE & ONE Technologies</title>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
         <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <section class="header">
             <div class="navbar-container">
                 <div class="logo">
-                    <img src="1763090313808 (1).png" alt="ONE & ONE Technologies Logo" class="site-logo">
+                    <img src="D:\Html\website\1763090313808 (1).png" alt="ONE & ONE Technologies Logo" class="site-logo">
                 </div>
                 <nav class="desktop-nav">
                     <ul>
@@ -51,19 +51,19 @@
                         <h1>Is Your Technology Holding You Back?</h1>
                         <p>Stop Building. Start Engineering. High-Performance Software For a Scalable World.</p>
                     </div>
-                    <button>Explore Projects</button>
-                    <a href="#contact" class="secondary-cta">Get a Consultation &rarr;</a>
+                    <div>
+                        <button>Explore Projects</button>
+                        <a href="#contact" class="secondary-cta">Get a Consultation &rarr;</a>
+                    </div>
                 </div>
             </div>
         </section>
         
         <section class="category services-section" id="services">
             <div class="list">
-                <h2>WHAT WE PROVIDE</h2>
-                
                 <div class="core-services-circle-container" data-aos="fade-down">
                     <div class="central-circle">
-                        <img src="1763090313808 (1).png" alt="ONE & ONE Tech Logo">
+                        <img src="D:\Html\website\1763090313808 (1).png" alt="ONE & ONE Tech Logo">
                     </div>
 
                     <div class="service-point point-top" data-aos="fade" data-aos-delay="200">
@@ -72,18 +72,17 @@
                     </div>
                     
                     <div class="service-point point-left" data-aos="fade" data-aos-delay="400">
-                        <div class="service-icon">📱</div>
+                        <div class="service-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
                         <h4>WEB & MOBILE Apps</h4>
                     </div>
                     
                     <div class="service-point point-right" data-aos="fade" data-aos-delay="600">
-                        <div class="service-icon">🚀</div>
+                        <div class="service-icon"><i class="fa-solid fa-rocket"></i></div>
                         <h4>Exclusive Websites</h4>
                     </div>
                 </div>
                 
                 <div class="specialized-services-list">
-                    <h3>Specialized Verticals & Sub-Services</h3>
                     <div class="services-grid">
                         
                         <div class="grid-item" data-aos="fade-up" data-aos-delay="50">
@@ -92,27 +91,27 @@
                         </div>
                         
                         <div class="grid-item" data-aos="fade-up" data-aos-delay="150">
-                            <i class="fa-solid fa-house-chimney-window"></i>
-                            <p>Restaurant/Hotels/Lodging (PMS,POS)</p>
+                            <i class="fa-solid fa-bag-shopping"></i>
+                            <p>E-Commerce</p>
                         </div>
 
                         <div class="grid-item" data-aos="fade-up" data-aos-delay="250">
                             <i class="fa-solid fa-truck-fast"></i>
-                            <p>Logistic Mgmt/Real Time Tracking</p>
+                            <p>Logistic Mgmt / Real Time Tracking</p>
                         </div>
 
                         <div class="grid-item" data-aos="fade-up" data-aos-delay="350">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                            <p>E-Commerce</p>
+                            <i class="fa-solid fa-utensils"></i>
+                            <p>Restaurant Mgmt (POS, PMS)</p>
                         </div>
 
                         <div class="grid-item" data-aos="fade-up" data-aos-delay="450">
-                            <i class="fa-solid fa-wallet"></i>
-                            <p>Portfolio Site/Websites</p>
+                            <i class="fa-solid fa-laptop-code"></i>
+                            <p>Exclusive Websites</p>
                         </div>
                         
                         <div class="grid-item" data-aos="fade-up" data-aos-delay="550">
-                            <i class="fa-solid fa-drafting-compass"></i>
+                            <i class="fa-solid fa-bezier-curve"></i>
                             <p>UI/UX Services</p>
                         </div>
                     </div>
@@ -134,7 +133,7 @@
                             </div>
                         </div>
                         <div class="feature-image-block">
-                            <img src="modernization.jpeg" alt="Visualization of old application UI being modernized into a new, sleek SaaS interface." class="feature-image">
+                            <img src="modernization.jpeg" alt="Modernization" class="feature-image">
                         </div>
                     </div>
 
@@ -147,7 +146,7 @@
                             </div>
                         </div>
                         <div class="feature-image-block">
-                            <img src="ERP.jpeg" alt="Software development ecosystem showing connected icons for mobile apps, web, microservices, and ERP integration." class="feature-image">
+                            <img src="ERP.jpeg" alt="ERP Development" class="feature-image">
                         </div>
                     </div>
 
@@ -160,7 +159,7 @@
                             </div>
                         </div>
                         <div class="feature-image-block">
-                            <img src="launch.jpeg" alt="Abstract image representing user-friendly UI/UX design, modern technology, and comprehensive development." class="feature-image">
+                            <img src="launch.jpeg" alt="Launch Success" class="feature-image">
                         </div>
                     </div>
                 </div> 
@@ -258,12 +257,13 @@
                 </form>
             </div>
         </div>
+
         <script src="script.js"></script>
         <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
         <script>
             AOS.init({
-                duration: 1000, // Time in milliseconds for the animation to complete
-                once: true,     // Animation should only happen once on scroll down
+                duration: 1000,
+                once: true,
             });
         </script>
     </body>
